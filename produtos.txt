@@ -1,0 +1,30 @@
+{"id": 1, "nome": "Lixeira", "quantidade": 50, "reposicao": 10, "media_vendas": 20, "demanda": 15}
+{"id": 2, "nome": "Cadeira", "quantidade": 100, "reposicao": 5, "media_vendas": 15, "demanda": 20}
+{"id": 3, "nome": "Mesa", "quantidade": 80, "reposicao": 8, "media_vendas": 25, "demanda": 18}
+{"id": 4, "nome": "Computador", "quantidade": 30, "reposicao": 15, "media_vendas": 10, "demanda": 8}
+{"id": 5, "nome": "Teclado", "quantidade": 60, "reposicao": 12, "media_vendas": 18, "demanda": 12}
+{"id": 6, "nome": "Mouse", "quantidade": 70, "reposicao": 7, "media_vendas": 22, "demanda": 14}
+{"id": 7, "nome": "Monitor", "quantidade": 40, "reposicao": 20, "media_vendas": 12, "demanda": 10}
+{"id": 8, "nome": "Impressora", "quantidade": 20, "reposicao": 25, "media_vendas": 8, "demanda": 5}
+{"id": 9, "nome": "Pasta de arquivo", "quantidade": 90, "reposicao": 9, "media_vendas": 30, "demanda": 20}
+{"id": 10, "nome": "Caneta", "quantidade": 120, "reposicao": 6, "media_vendas": 35, "demanda": 25}
+{"id": 11, "nome": "Lápis", "quantidade": 150, "reposicao": 5, "media_vendas": 40, "demanda": 28}
+{"id": 12, "nome": "Borracha", "quantidade": 80, "reposicao": 8, "media_vendas": 20, "demanda": 15}
+{"id": 13, "nome": "Caderno", "quantidade": 100, "reposicao": 10, "media_vendas": 28, "demanda": 22}
+{"id": 14, "nome": "Calculadora", "quantidade": 50, "reposicao": 15, "media_vendas": 15, "demanda": 10}
+{"id": 15, "nome": "Grampo", "quantidade": 200, "reposicao": 4, "media_vendas": 45, "demanda": 30}
+{"id": 16, "nome": "Tesoura", "quantidade": 60, "reposicao": 6, "media_vendas": 25, "demanda": 18}
+{"id": 17, "nome": "Fita adesiva", "quantidade": 70, "reposicao": 14, "media_vendas": 22, "demanda": 14}
+{"id": 18, "nome": "Papel A4", "quantidade": 150, "reposicao": 12, "media_vendas": 30, "demanda": 25}
+{"id": 19, "nome": "Post-it", "quantidade": 100, "reposicao": 10, "media_vendas": 20, "demanda": 20}
+{"id": 20, "nome": "Clips", "quantidade": 80, "reposicao": 8, "media_vendas": 18, "demanda": 15}
+{"id": 21, "nome": "Caixa organizadora", "quantidade": 40, "reposicao": 20, "media_vendas": 12, "demanda": 8}
+{"id": 22, "nome": "Agenda", "quantidade": 30, "reposicao": 15, "media_vendas": 8, "demanda": 5}
+{"id": 23, "nome": "Pasta suspensa", "quantidade": 90, "reposicao": 9, "media_vendas": 25, "demanda": 20}
+{"id": 24, "nome": "Envelope", "quantidade": 120, "reposicao": 6, "media_vendas": 30, "demanda": 25}
+{"id": 25, "nome": "Giz de cera", "quantidade": 150, "reposicao": 5, "media_vendas": 40, "demanda": 28}
+{"id": 26, "nome": "Pincel atômico", "quantidade": 80, "reposicao": 8, "media_vendas": 20, "demanda": 15}
+{"id": 27, "nome": "Lousa", "quantidade": 100, "reposicao": 10, "media_vendas": 28, "demanda": 22}
+{"id": 28, "nome": "Apagador", "quantidade": 50, "reposicao": 15, "media_vendas": 15, "demanda": 10}
+{"id": 29, "nome": "Mapa-múndi", "quantidade": 200, "reposicao": 4, "media_vendas": 45, "demanda": 30}
+{"id": 30, "nome": "Globo terrestre", "quantidade": 60, "reposicao": 6, "media_vendas": 25, "demanda": 18}
