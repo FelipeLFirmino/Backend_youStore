@@ -1,0 +1,5 @@
+
+{"id": 1, "nome": "Lixeira", "quantidade": 71, "reposicao": 19, "media_vendas": 29, "preco_compra": 15, "preco_venda": 39}    {"id": 2, "nome": "Cadeira", "quantidade": 140, "reposicao": 9, "media_vendas": 22, "preco_compra": 30, "preco_venda": 92}
+{"id": 3, "nome": "Mesa", "quantidade": 112, "reposicao": 15, "media_vendas": 36, "preco_compra": 50, "preco_venda": 129}
+{"id": 4, "nome": "Computador", "quantidade": 42, "reposicao": 27, "media_vendas": 14, "preco_compra": 200, "preco_venda":657}
+{"id": 5, "nome": "Teclado", "quantidade": 84, "reposicao": 22, "media_vendas": 26, "preco_compra": 25, "preco_venda": 56}
