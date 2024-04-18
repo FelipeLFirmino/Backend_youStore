@@ -2,6 +2,7 @@ import pandas as pd
 import json
 
 def dados_teclados(all_data):
+    
     # Converte o JSON para um DataFrame do Pandas
     all_data = pd.DataFrame(json.loads(all_data))
     

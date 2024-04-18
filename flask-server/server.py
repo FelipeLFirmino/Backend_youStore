@@ -5,6 +5,7 @@ from functions import dados_computadores
 from functions import dados_teclados
 from functions import dados_lixeiras
 from functions import dados_cadeiras
+from randomForest import randomforestmodel
 
 
 
@@ -53,15 +54,64 @@ def caminho_ler_cadeiras():
     return jsonify(dados_json_cadeira)
 
 
-# @app.route('/caminho_listar_produtos', methods=['GET'])
-# def caminho_listar_produtos():
-#     produtos = ler_arquivos(pasta)
-#     # Converte o DataFrame em um dicionário para serialização JSON
-#     produtos_dict = produtos.to_dict(orient='records')
-#     return jsonify(produtos_dict)
+@app.route('/caminho_prever_demanda_produto/<string:produto>', methods=['GET'])
+def caminho_prever_demanda_produto(produto):
+    # Verificar se o produto fornecido está na lista de produtos permitidos
+    if produto not in ['computador', 'mesa', 'cadeira', 'teclado', 'lixeira']:
+        return jsonify({'erro': 'Produto não reconhecido!'})
+
+    # Ler os dados do arquivo correspondente ao produto
+    dados_json = ler_arquivos.ler_arquivo(pasta) 
+    
+    # Selecionar os dados específicos do produto
+    if produto == 'computador':
+        dados_produto = dados_computadores.dados_computadores(dados_json)
+    elif produto == 'mesa':
+        dados_produto = dados_mesas.dados_mesas(dados_json)
+    elif produto == 'cadeira':
+        dados_produto = dados_cadeiras.dados_cadeiras(dados_json)
+    elif produto == 'teclado':
+        dados_produto = dados_teclados.dados_teclados(dados_json)
+    elif produto == 'lixeira':
+        dados_produto = dados_lixeiras.dados_lixeiras(dados_json)
+
+    # Treinar o modelo usando os dados do produto e obter a previsão
+    previsao = randomforestmodel.prever_media_vendas(dados_produto)
+
+    # Retornar a previsão para o produto específico
+    return jsonify({f'previsao_{produto}': previsao})
 
 
+@app.route('/caminho_prever_demanda_produto/todos_produtos', methods=['GET'])
+def caminho_prever_demanda_todos_produtos():
+    # Lista para armazenar as previsões de demanda de todos os produtos
+    previsoes_todos_produtos = {}
 
+    # Fazendo previsões de demanda para cada produto individualmente
+    for produto in ['computador', 'mesa', 'cadeira', 'teclado', 'lixeira']:
+        # Ler os dados do arquivo correspondente ao produto
+        dados_json = ler_arquivos.ler_arquivo(pasta)
+
+        # Selecionar os dados específicos do produto
+        if produto == 'computador':
+            dados_produto = dados_computadores.dados_computadores(dados_json)
+        elif produto == 'mesa':
+            dados_produto = dados_mesas.dados_mesas(dados_json)
+        elif produto == 'cadeira':
+            dados_produto = dados_cadeiras.dados_cadeiras(dados_json)
+        elif produto == 'teclado':
+            dados_produto = dados_teclados.dados_teclados(dados_json)
+        elif produto == 'lixeira':
+            dados_produto = dados_lixeiras.dados_lixeiras(dados_json)
+
+            # Treinar o modelo usando os dados do produto e obter a previsão
+        previsao = randomforestmodel.prever_media_vendas(dados_produto)
+
+        # Adicionando a previsão do produto à lista
+        previsoes_todos_produtos[produto] = previsao
+
+    # Retornando as previsões de todos os produtos
+    return jsonify(previsoes_todos_produtos)
 
 
 
