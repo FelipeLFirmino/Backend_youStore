@@ -26,4 +26,5 @@ def ler_arquivo(pasta):
 
     # Concatenar todos os DataFrames da lista em um único DataFrame
     all_data = pd.concat(lista_dataframes, ignore_index=True)
-    return all_data
+    # Converter o DataFrame para JSON e retorná-lo
+    return all_data.to_json(orient='records')
