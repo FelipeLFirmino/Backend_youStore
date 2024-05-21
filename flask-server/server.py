@@ -116,28 +116,6 @@ def caminho_prever_demanda_todos_produtos():
 
 
 
-
-
-
-
-# Adicionando novas approute aqui
-# @app.route('/calcular_media_vendas', methods=['GET'])
-# def calcular_media_vendas_route():
-#     media_vendas = calcular_media_vendas(produtos)
-#     return jsonify(media_vendas)
-
-# @app.route('/calcular_lucratividade', methods=['POST'])
-# def calcular_lucratividade_route():
-#     dados = request.get_json()
-#     preco_compra = dados['preco_compra']
-#     preco_venda = dados['preco_venda']
-#     demanda = dados['demanda']
-#     media_vendas = dados['media_vendas']
-    
-#     lucratividade = calcular_lucratividade(preco_compra, preco_venda, demanda, media_vendas)
-    
-#     return jsonify({'lucratividade': lucratividade})
-
 if __name__ == "__main__":
     app.run(debug=True)
 
