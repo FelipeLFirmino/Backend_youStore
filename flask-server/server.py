@@ -89,9 +89,8 @@ def caminho_prever_demanda_produto(produto):
         return jsonify({'erro': 'Produto não reconhecido!'})
 
     dados_produto = ler_dados_produto(produto)
-    previsao = randomforestmodel.prever_media_vendas(json.dumps(dados_produto))  # Use json.dumps para converter para JSON
-
-    return jsonify({'previsao': previsao})  # Retorna como dicionário JSON
+    previsao = randomforestmodel.prever_media_vendas(dados_produto)
+    return jsonify({f'previsao_{produto}': previsao})
 
 @app.route('/caminho_prever_demanda_produto/todos_produtos', methods=['GET'])
 def caminho_prever_demanda_todos_produtos():
@@ -99,7 +98,7 @@ def caminho_prever_demanda_todos_produtos():
 
     for produto in ['Computador', 'Mesa', 'Cadeira', 'Teclado', 'Lixeira']:
         dados_produto = ler_dados_produto(produto)
-        previsao = randomforestmodel.prever_media_vendas(json.dumps(dados_produto))  # Use json.dumps para converter para JSON
+        previsao = randomforestmodel.prever_media_vendas(dados_produto)
         previsoes_todos_produtos[produto] = previsao
 
     return jsonify(previsoes_todos_produtos)
