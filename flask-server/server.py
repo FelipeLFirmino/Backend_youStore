@@ -95,8 +95,6 @@ def caminho_ler_cadeiras():
 
 
 # REQUISIÇÕES DEMANDAS
-
-
 @app.route("/caminho_prever_demanda_produto/<string:produto>", methods=["GET"])
 def caminho_prever_demanda_produto(produto):
     if produto not in ["Computador", "Mesa", "Cadeira", "Teclado", "Lixeira"]:
@@ -118,9 +116,8 @@ def caminho_prever_demanda_todos_produtos():
 
     return jsonify(previsoes_todos_produtos)
 
-<<<<<<< HEAD
-=======
-@app.route('/quantidade_vendas_mes11', methods=['GET'])
+
+@app.route("/quantidade_vendas_mes11", methods=["GET"])
 def quantidade_vendas_mes11():
     connection = None
     try:
@@ -130,7 +127,9 @@ def quantidade_vendas_mes11():
             cursor.execute(sql)
             produtos_mes11 = cursor.fetchall()
             # Montar o resultado como um dicionário
-            resultado = {produto['nome']: produto['media_vendas'] for produto in produtos_mes11}
+            resultado = {
+                produto["nome"]: produto["media_vendas"] for produto in produtos_mes11
+            }
     except Exception as e:
         print(f"Erro ao consultar o banco de dados: {e}")
         resultado = {}
@@ -138,8 +137,6 @@ def quantidade_vendas_mes11():
         if connection:
             connection.close()
     return jsonify(resultado)
-
->>>>>>> 2ed2ebc6411b0111b530eec803eb511112bd4091
 
 if __name__ == "__main__":
     app.run(debug=True)
