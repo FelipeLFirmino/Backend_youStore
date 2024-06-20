@@ -118,6 +118,28 @@ def caminho_prever_demanda_todos_produtos():
 
     return jsonify(previsoes_todos_produtos)
 
+<<<<<<< HEAD
+=======
+@app.route('/quantidade_vendas_mes11', methods=['GET'])
+def quantidade_vendas_mes11():
+    connection = None
+    try:
+        connection = get_connection()
+        with connection.cursor(cursor_factory=psycopg2.extras.DictCursor) as cursor:
+            sql = "SELECT nome, media_vendas FROM produtos WHERE mes = 11"
+            cursor.execute(sql)
+            produtos_mes11 = cursor.fetchall()
+            # Montar o resultado como um dicionário
+            resultado = {produto['nome']: produto['media_vendas'] for produto in produtos_mes11}
+    except Exception as e:
+        print(f"Erro ao consultar o banco de dados: {e}")
+        resultado = {}
+    finally:
+        if connection:
+            connection.close()
+    return jsonify(resultado)
+
+>>>>>>> 2ed2ebc6411b0111b530eec803eb511112bd4091
 
 if __name__ == "__main__":
     app.run(debug=True)
