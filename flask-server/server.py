@@ -11,16 +11,20 @@ from functions import (
 from randomForest import randomforestmodel
 import psycopg2
 import psycopg2.extras
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 
 
 # CONEXÃO BANCO DE DADOS
 def get_connection():
     return psycopg2.connect(
-        host="you-store.c7k26sugsa4x.us-east-1.rds.amazonaws.com",
-        user="postgres",
-        password="projeto123",
-        database="banco-de-dados-youStore",
-        port=5432,
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_DATABASE"),
+        port=os.getenv("DB_PORT"),
     )
 
 
@@ -137,6 +141,7 @@ def quantidade_vendas_mes11():
         if connection:
             connection.close()
     return jsonify(resultado)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
