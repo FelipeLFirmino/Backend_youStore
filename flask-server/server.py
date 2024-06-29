@@ -30,7 +30,6 @@ def get_connection():
 
 app = Flask(__name__)
 
-
 # VER TODOS OS PRODUTOS
 @app.route("/caminho_ler_produtos", methods=["GET"])
 def caminho_ler_produtos():
